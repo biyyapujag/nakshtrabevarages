@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nakshatra | Premium Hydration & Purity</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=300;400;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -28,7 +26,6 @@
             transition: all 0.3s ease;
         }
 
-        /* Sticky Header */
         .sticky-header {
             position: sticky;
             top: 0;
@@ -36,41 +33,21 @@
             background-color: var(--nevas-teal);
         }
 
-        /* Dropdown Desktop Hover */
-        @media (min-width: 1024px) {
-            .dropdown:hover .dropdown-menu {
-                display: block;
-            }
+        /* Hide Scrollbar for clean auto-scrolling execution */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
 
-        /* Carousel Animation */
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-
-        .animate-scroll {
-            display: flex;
-            width: 200%;
-            animation: scroll 25s linear infinite;
-        }
-
-        /* Form Label Animation */
         .peer:focus~label,
         .peer:not(:placeholder-shown)~label {
             transform: translateY(-1.5rem) scale(0.75);
             color: var(--nevas-teal);
         }
 
-        /* Mobile Background Setup with high transparency.
-           On screens smaller than 1024px, the image wraps the entire section. 
-           We use a white overlay at 92% opacity (0.92) to keep the image faint and readable.
-        */
         @media (max-width: 1023px) {
             .mobile-bg-about {
                 background-image: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)), url('aboutus.png');
@@ -82,18 +59,13 @@
     </style>
 </head>
 
-<body class="bg-white text-slate-900">
+<body class="bg-white text-slate-900 overflow-x-hidden">
 
+    <!-- Header -->
     <header class="sticky-header text-white px-8 py-2 shadow-lg">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
-            
             <div class="flex items-center gap-3">
-                <div class="w-14 h-14 bg-contain bg-no-repeat bg-center" 
-                     style="background-image: url('logo.png');" 
-                     role="img" 
-                     aria-label="Nakshatra Beverages Logo">
-                </div>
-                
+                <div class="w-14 h-14 bg-contain bg-no-repeat bg-center" style="background-image: url('logo.png');" role="img" aria-label="Nakshatra Beverages Logo"></div>
                 <div class="flex flex-col justify-center">
                     <span class="text-xl font-bold leading-none tracking-wide">Nakshatra</span>
                     <span class="text-sm font-light leading-tight tracking-wide">Beverages</span>
@@ -103,150 +75,121 @@
             <nav class="hidden lg:flex items-center space-x-8">
                 <a href="#" class="nav-link uppercase hover:text-orange-300">Home</a>
                 <a href="#about" class="nav-link uppercase hover:text-orange-300">About Us</a>
-                
-                <!-- <div class="relative dropdown group">
-                    <button class="nav-link uppercase flex items-center gap-1 py-2">
-                        Our Products 
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" aria-hidden="true" class="lucide lucide-chevron-down w-4 h-4 transition-transform group-hover:rotate-180"><path d="m6 9 6 6 6-6"></path></svg>
-                    </button>
-                    <div class="dropdown-menu hidden absolute top-full right-0 bg-white text-slate-800 shadow-2xl rounded-lg py-3 w-56 mt-0 border-t-4 border-[#004d55]">
-                        <a href="#mineral" class="block px-6 py-2 hover:bg-slate-50 hover:text-[#004d55] font-medium">Mineral Water</a>
-                        <a href="#alkaline" class="block px-6 py-2 hover:bg-slate-50 hover:text-[#004d55] font-medium">Alkaline Water</a>
-                    </div>
-                </div> -->
                 <a href="#ourproducts" class="nav-link uppercase bg-white/10 px-5 py-2 rounded-full hover:bg-white/20 transition">Products</a>
                 <a href="#contact" class="nav-link uppercase bg-white/10 px-5 py-2 rounded-full hover:bg-white/20 transition">Contact Us</a>
-                
-                <a href="https://nakshatrabeverages.web.app/login" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-2 rounded-full bg-white text-[#004d55] hover:bg-orange-300 hover:text-[#004d55] transition-all shadow-md group" aria-label="User Portal">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" class="lucide lucide-user w-5 h-5"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <a href="https://nakshatrabeverages.web.app/login" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-2 rounded-full bg-white text-[#004d55] hover:bg-orange-300 hover:text-[#004d55] transition-all shadow-md" aria-label="User Portal">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                 </a>
             </nav>
 
             <button id="mobileMenuBtn" class="lg:hidden text-white hover:text-orange-300 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="menu" aria-hidden="true" class="lucide lucide-menu"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
             </button>
         </div>
     </header>
 
+    <!-- Mobile Sidebar -->
     <div id="mobileSidebar" class="fixed inset-0 z-[2000] invisible transition-all duration-300">
         <div id="sidebarOverlay" class="absolute inset-0 bg-slate-900/50 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
-        
         <div id="sidebarPanel" class="absolute top-0 right-0 w-80 h-full bg-[#004d55] text-white p-6 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col justify-between">
             <div>
                 <div class="flex justify-end mb-8">
                     <button id="closeSidebarBtn" class="p-2 text-white/80 hover:text-white transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="x" class="lucide lucide-x"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line></svg>
                     </button>
                 </div>
-
                 <nav class="flex flex-col space-y-6">
-                    <a href="#" class="mobile-nav-link text-lg font-semibold uppercase tracking-wider hover:text-orange-300 transition-colors">Home</a>
-                    <a href="#about" class="mobile-nav-link text-lg font-semibold uppercase tracking-wider hover:text-orange-300 transition-colors">About Us</a>
-                    
-                    <div class="flex flex-col space-y-2">
-                        <span class="text-xs uppercase font-bold tracking-widest text-slate-400">Our Products</span>
-                        <a href="#mineral" class="mobile-nav-link pl-4 text-base font-medium hover:text-orange-300 transition-colors">— Mineral Water</a>
-                        <a href="#alkaline" class="mobile-nav-link pl-4 text-base font-medium hover:text-orange-300 transition-colors">— Alkaline Water</a>
-                    </div>
-                    
-                    <a href="#contact" class="mobile-nav-link text-lg font-semibold uppercase tracking-wider hover:text-orange-300 transition-colors">Contact Us</a>
+                    <a href="#" class="mobile-nav-link text-lg font-semibold uppercase tracking-wider hover:text-orange-300">Home</a>
+                    <a href="#about" class="mobile-nav-link text-lg font-semibold uppercase tracking-wider hover:text-orange-300">About Us</a>
+                    <a href="#ourproducts" class="mobile-nav-link text-lg font-semibold uppercase tracking-wider hover:text-orange-300">Our Products</a>
+                    <a href="#contact" class="mobile-nav-link text-lg font-semibold uppercase tracking-wider hover:text-orange-300">Contact Us</a>
                 </nav>
             </div>
-
             <div class="border-t border-white/10 pt-6">
                 <a href="https://nakshatrabeverages.web.app/login" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 w-full bg-white text-[#004d55] py-3 rounded-xl font-bold shadow-md hover:bg-orange-300 transition-all text-sm">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" class="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                    User Portal Dashboard
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> User Portal Dashboard
                 </a>
             </div>
         </div>
     </div>
 
-    <section class="relative h-[70vh] flex items-center justify-center bg-slate-900 overflow-hidden">
-        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover opacity-40 grayscale">
+    <!-- Hero Section -->
+    <section class="relative h-[80vh] flex items-center justify-center bg-slate-900 overflow-hidden">
+        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover opacity-35 grayscale">
             <source src="video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
         </video>
-
         <div class="relative z-10 text-center text-white px-6">
-            <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight">Pure Hydration. <br><span
-                    class="text-blue-400">Pure Life.</span></h1>
-            <p class="text-lg text-slate-300 max-w-2xl mx-auto">Bottling nature's finest minerals with advanced
-                filtration technology for your daily wellness.</p>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-tight">Purity Reimagined.<br><span class="text-blue-400">Life Energized.</span></h1>
+            <p class="text-lg md:text-xl text-slate-300 max-w-xl mx-auto font-light">Advanced 7-stage ultra-filtration meets pristine mineral composition for elite daily wellness.</p>
+        </div>
+        <!-- Curve Transition at base of Hero -->
+        <div class="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-[0] translate-y-[1px]">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-[60px] fill-[#004d55]">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C26.9,4.75,55.05,16.32,83.37,27.57,143.05,51.3,204.09,67.23,321.39,56.44Z"></path>
+            </svg>
         </div>
     </section>
 
-    
-
-    <section class="bg-[#004d55] py-20 px-8 text-white">
+    <!-- Highlights Section -->
+    <section class="bg-[#004d55] pt-12 pb-24 px-8 text-white relative">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-16 uppercase tracking-widest">Key Highlights</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 text-center">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 <div class="flex flex-col items-center">
-                    <div class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center mb-4"><i
-                            data-lucide="users"></i></div>
-                    <div class="text-3xl font-bold"><span class="counter" data-target="200">0</span>+</div>
-                    <p class="text-[10px] uppercase tracking-widest text-slate-300 mt-2">Premium Client</p>
+                    <div class="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center mb-4 text-orange-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                    </div>
+                    <div class="text-3xl font-bold"><span class="counter" data-target="7">0</span> Stages</div>
+                    <p class="text-[10px] uppercase tracking-widest text-slate-300 mt-2">Precision Filtration</p>
                 </div>
                 <div class="flex flex-col items-center">
-                    <div class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center mb-4"><i
-                            data-lucide="droplet"></i></div>
+                    <div class="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center mb-4 text-orange-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="15" x2="23" y2="15"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="15" x2="4" y2="15"></line></svg>
+                    </div>
                     <div class="text-3xl font-bold"><span class="counter" data-target="100">0</span>%</div>
-                    <p class="text-[10px] uppercase tracking-widest text-slate-300 mt-2">Water Purity</p>
+                    <p class="text-[10px] uppercase tracking-widest text-slate-300 mt-2">Touchless Automation</p>
                 </div>
                 <div class="flex flex-col items-center">
-                    <div class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center mb-4"><i
-                            data-lucide="map"></i></div>
-                    <div class="text-3xl font-bold"><span class="counter" data-target="10">0</span>+</div>
-                    <p class="text-[10px] uppercase tracking-widest text-slate-300 mt-2">Serviced Cities</p>
+                    <div class="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center mb-4 text-orange-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </div>
+                    <div class="text-3xl font-bold">Elite Choice</div>
+                    <p class="text-[10px] uppercase tracking-widest text-slate-300 mt-2">Trusted Premium Clients</p>
                 </div>
                 <div class="flex flex-col items-center">
-                    <div class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center mb-4"><i
-                            data-lucide="factory"></i></div>
-                    <div class="text-3xl font-bold"><span class="counter" data-target="4">0</span>+</div>
-                    <p class="text-[10px] uppercase tracking-widest text-slate-300 mt-2">Operational Plants</p>
-                </div>
-                <div class="flex flex-col items-center">
-                    <div class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center mb-4"><i
-                            data-lucide="layers"></i></div>
-                    <div class="text-3xl font-bold">13-20</div>
-                    <p class="text-[10px] uppercase tracking-widest text-slate-300 mt-2">Stage Filtrations</p>
-                </div>
-                <div class="flex flex-col items-center">
-                    <div class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center mb-4"><i
-                            data-lucide="check-circle"></i></div>
-                    <div class="text-3xl font-bold"><span class="counter" data-target="3">0</span>+</div>
-                    <p class="text-[10px] uppercase tracking-widest text-slate-300 mt-2">FDA Approved</p>
+                    <div class="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center mb-4 text-orange-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 11 11 13 15 9"></polyline></svg>
+                    </div>
+                    <div class="text-3xl font-bold">Premium</div>
+                    <p class="text-[10px] uppercase tracking-widest text-slate-300 mt-2">BIS Certified Safety</p>
                 </div>
             </div>
         </div>
+        <!-- Curve Transition out of Highlights to Products -->
+        <div class="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-[0] translate-y-[1px]">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-[60px] fill-slate-50">
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86C204.1,67.23,143,51.3,83.37,27.57,55.05,16.32,26.9,4.75,0,0V120H1200V92.83Z"></path>
+            </svg>
+        </div>
     </section>
 
-   <section id="ourproducts"  class="py-20 bg-slate-50 border-b border-slate-100 overflow-hidden">
+    <!-- Product Portfolio (Automated Infinite Loop Carousel) -->
+    <section id="ourproducts" class="py-16 bg-slate-50 overflow-hidden relative">
         <div class="max-w-7xl mx-auto px-6 md:px-8">
-            
-            <div class="text-center max-w-3xl mx-auto mb-14">
-                <div class="flex justify-center gap-1 mb-3">
-                    <div class="w-1.5 h-1.5 rounded-full bg-[#004d55]"></div>
-                    <div class="w-6 h-1 rounded-full bg-[#f2ae24]"></div>
-                    <div class="w-1.5 h-1.5 rounded-full bg-[#004d55]"></div>
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#f2ae24] block mb-2">Curated Hydration</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#004d55] uppercase tracking-wider">The Product Portfolio</h2>
                 </div>
-                <h2 class="text-2xl md:text-4xl font-bold text-[#004d55] uppercase tracking-wider">Our Esteemed Products</h2>
-                <p class="text-slate-500 text-sm md:text-base mt-2">Explore our premium packaging variants crafted with pristine mineral balance for elite standards.</p>
-                <p class="text-xs font-semibold text-[#f2ae24] uppercase tracking-widest mt-3 lg:hidden flex items-center justify-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="animate-pulse"><path d="m15 18-6-6 6-6"/></svg>
-                    Swipe to browse collection
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="animate-pulse"><path d="m9 18 6-6-6-6"/></svg>
-                </p>
             </div>
 
-            <div class="flex overflow-x-auto pb-8 gap-6 scrollbar-none snap-x snap-mandatory lg:grid lg:grid-cols-3 xl:grid-cols-4 lg:gap-8 lg:overflow-visible lg:pb-0"
-                 style="-webkit-overflow-scrolling: touch; scrollbar-width: none;">
+            <!-- Auto Scrolling Container -->
+            <div id="productCarousel" class="flex overflow-x-auto gap-6 pb-4 no-scrollbar whitespace-nowrap">
                 
-                <div class="w-[78vw] sm:w-[50vw] md:w-[40vw] lg:w-full shrink-0 snap-center bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200/60 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between group">
+                <!-- Card 1 -->
+                <div class="w-[280px] md:w-[320px] shrink-0 bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200/60 transition-all duration-300 hover:shadow-xl flex flex-col justify-between group">
                     <div class="aspect-[3/4] w-full overflow-hidden bg-slate-100 relative">
-                        <img src="iceburg_green.webp" loading="lazy" alt="Iceburg Pure Packaged Drinking Water" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <span class="absolute top-4 left-4 bg-emerald-600 text-white font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full shadow-sm">Purity Choice</span>
+                        <img src="iceburg_green.webp" loading="lazy" alt="Iceburg Pure" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <span class="absolute top-4 left-4 bg-emerald-600 text-white font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full">Purity Choice</span>
                     </div>
                     <div class="p-5 border-t border-slate-50 bg-white">
                         <h3 class="text-lg font-bold text-[#004d55] mb-1">Iceburg Pure</h3>
@@ -254,10 +197,11 @@
                     </div>
                 </div>
 
-                <div class="w-[78vw] sm:w-[50vw] md:w-[40vw] lg:w-full shrink-0 snap-center bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200/60 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between group">
+                <!-- Card 2 -->
+                <div class="w-[280px] md:w-[320px] shrink-0 bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200/60 transition-all duration-300 hover:shadow-xl flex flex-col justify-between group">
                     <div class="aspect-[3/4] w-full overflow-hidden bg-slate-100 relative">
-                        <img src="natural.webp" loading="lazy" alt="Natural Smart Balanced Hydration" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <span class="absolute top-4 left-4 bg-pink-600 text-white font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full shadow-sm">Healthy Living</span>
+                        <img src="natural.webp" loading="lazy" alt="Natural Smart" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <span class="absolute top-4 left-4 bg-pink-600 text-white font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full">Healthy Living</span>
                     </div>
                     <div class="p-5 border-t border-slate-50 bg-white">
                         <h3 class="text-lg font-bold text-[#004d55] mb-1">Natural Smart</h3>
@@ -265,10 +209,11 @@
                     </div>
                 </div>
 
-                <div class="w-[78vw] sm:w-[50vw] md:w-[40vw] lg:w-full shrink-0 snap-center bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200/60 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between group">
+                <!-- Card 3 -->
+                <div class="w-[280px] md:w-[320px] shrink-0 bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200/60 transition-all duration-300 hover:shadow-xl flex flex-col justify-between group">
                     <div class="aspect-[3/4] w-full overflow-hidden bg-slate-100 relative">
-                        <img src="lavin2.webp" loading="lazy" alt="Lovin Multi-Size Range Packaged Drinking Water" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <span class="absolute top-4 left-4 bg-amber-500 text-white font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full shadow-sm">Multi-Pack</span>
+                        <img src="lavin2.webp" loading="lazy" alt="Lavin Water" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <span class="absolute top-4 left-4 bg-amber-500 text-white font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full">Multi-Pack</span>
                     </div>
                     <div class="p-5 border-t border-slate-50 bg-white">
                         <h3 class="text-lg font-bold text-[#004d55] mb-1">Lavin Packaged Water</h3>
@@ -276,10 +221,11 @@
                     </div>
                 </div>
 
-                <div class="w-[78vw] sm:w-[50vw] md:w-[40vw] lg:w-full shrink-0 snap-center bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200/60 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between group">
+                <!-- Card 4 -->
+                <div class="w-[280px] md:w-[320px] shrink-0 bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200/60 transition-all duration-300 hover:shadow-xl flex flex-col justify-between group">
                     <div class="aspect-[3/4] w-full overflow-hidden bg-slate-100 relative">
-                        <img src="iceburg_black.webp" loading="lazy" alt="Iceburg Premium Packaged Drinking Water Gold Label" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <span class="absolute top-4 left-4 bg-slate-900 text-amber-400 font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full shadow-sm border border-amber-500/30">Luxury Edition</span>
+                        <img src="iceburg_black.webp" loading="lazy" alt="Iceburg Premium" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <span class="absolute top-4 left-4 bg-slate-900 text-amber-400 font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full border border-amber-500/30">Luxury Edition</span>
                     </div>
                     <div class="p-5 border-t border-slate-50 bg-white">
                         <h3 class="text-lg font-bold text-[#004d55] mb-1">Iceberg Premium</h3>
@@ -287,286 +233,183 @@
                     </div>
                 </div>
 
-                <div class="w-[78vw] sm:w-[50vw] md:w-[40vw] lg:w-full shrink-0 snap-center bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200/60 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between group">
+                <!-- Card 5 -->
+                <div class="w-[280px] md:w-[320px] shrink-0 bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200/60 transition-all duration-300 hover:shadow-xl flex flex-col justify-between group">
                     <div class="aspect-[3/4] w-full overflow-hidden bg-slate-100 relative">
-                        <img src="b2.webp" loading="lazy" alt="B2 Crystal Clear Drinking Water" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <span class="absolute top-4 left-4 bg-blue-600 text-white font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full shadow-sm">Deep Hydration</span>
+                        <img src="b2.webp" loading="lazy" alt="B2 Water" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <span class="absolute top-4 left-4 bg-blue-600 text-white font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full">Deep Hydro</span>
                     </div>
                     <div class="p-5 border-t border-slate-50 bg-white">
                         <h3 class="text-lg font-bold text-[#004d55] mb-1">B2 Packaged Water</h3>
-                        <p class="text-xs text-slate-400 font-medium">Crystal Clear Deep Hydro</p>
-                    </div>
-                </div>
-
-                <div class="w-[78vw] sm:w-[50vw] md:w-[40vw] lg:w-full shrink-0 snap-center bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200/60 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between group">
-                    <div class="aspect-[3/4] w-full overflow-hidden bg-slate-100 relative">
-                        <img src="natural_smart.webp" loading="lazy" alt="Natural Packaged Drinking Water Waterfall Reserve" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <span class="absolute top-4 left-4 bg-teal-700 text-white font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full shadow-sm">Eco Source</span>
-                    </div>
-                    <div class="p-5 border-t border-slate-50 bg-white">
-                        <h3 class="text-lg font-bold text-[#004d55] mb-1">Natural Reserve</h3>
-                        <p class="text-xs text-slate-400 font-medium">Pristine Waterfall Eco Edition</p>
-                    </div>
-                </div>
-
-                <div class="w-[78vw] sm:w-[50vw] md:w-[40vw] lg:w-full shrink-0 snap-center bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200/60 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between group">
-                    <div class="aspect-[3/4] w-full overflow-hidden bg-slate-100 relative">
-                        <img src="lavin_pure.webp" loading="lazy" alt="Lovin Pure Packaged Drinking Water Orange" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <span class="absolute top-4 left-4 bg-orange-600 text-white font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full shadow-sm">Daily Hydration</span>
-                    </div>
-                    <div class="p-5 border-t border-slate-50 bg-white">
-                        <h3 class="text-lg font-bold text-[#004d55] mb-1">Lavin Pure</h3>
-                        <p class="text-xs text-slate-400 font-medium">Safe & Pure Everyday Choice</p>
+                        <p class="text-xs text-slate-400 font-medium">Crystal Clear Formulation</p>
                     </div>
                 </div>
 
             </div>
         </div>
-    </section>
-
-    <section id="mineral" class="py-24 px-8">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-[#004d55] mb-4">Our Products</h2>
-                <button class="bg-[#f2ae24] text-white px-6 py-2 text-xs font-bold uppercase rounded">Read More</button>
-            </div>
-
-            <div class="flex flex-col lg:flex-row items-center gap-16">
-                <div class="lg:w-1/2">
-                    <div class="flex gap-1 mb-4">
-                        <div class="w-1 h-6 bg-[#004d55]"></div>
-                        <div class="w-1 h-6 bg-[#004d55]"></div>
-                        <div class="w-1 h-6 bg-[#004d55]"></div>
-                    </div>
-                    <h3 class="text-5xl font-bold text-[#004d55] mb-6">Mineral Water</h3>
-                    <p class="text-slate-600 leading-relaxed mb-8 text-lg">
-                        Trusted mineral water brands not only quench your thirst but also provide essential minerals
-                        like calcium, magnesium, and potassium that your body needs. Ensures purity, safety, and
-                        refreshment in every sip.
-                    </p>
-                    <button
-                        class="bg-[#f2ae24] text-white px-10 py-4 rounded-lg font-bold shadow-lg hover:bg-orange-500 transition">Learn
-                        More</button>
-                </div>
-                <div class="lg:w-1/2 flex justify-center">
-                    <div
-                        class="w-72 h-[500px] bg-slate-50 rounded-3xl shadow-2xl border border-slate-100 flex items-center justify-center p-12">
-                        <div
-                            class="text-[#004d55] font-bold text-center border-2 border-dashed border-[#004d55]/20 p-8 rounded-xl">
-                            BOTTLE IMAGE PLACEHOLDER</div>
-                    </div>
-                </div>
-            </div>
+        <!-- Curve Transition out of Products to Feature showcase -->
+        <div class="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-[0] translate-y-[1px]">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-[60px] fill-white">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C26.9,4.75,55.05,16.32,83.37,27.57,143.05,51.3,204.09,67.23,321.39,56.44Z"></path>
+            </svg>
         </div>
     </section>
-<section id="about" class="mobile-bg-about py-24 px-8 bg-white overflow-hidden relative">
+
+   
+
+    <!-- Visionary Interactive Narrative Section -->
+    <section id="about" class="py-20 px-8 bg-slate-50 overflow-hidden relative">
         <div class="max-w-7xl mx-auto relative z-10">
             
-            <div class="flex flex-col lg:flex-row items-center gap-16 mb-24">
-                <div class="w-full lg:w-1/2">
-                    <div class="flex gap-1 mb-4">
-                        <div class="w-1 h-6 bg-[#004d55]"></div>
-                        <div class="w-1 h-6 bg-[#004d55]"></div>
-                        <div class="w-1 h-6 bg-[#004d55]"></div>
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#f2ae24] block mb-2">The Nakshatra Blueprint</span>
+                <h2 class="text-3xl md:text-5xl font-bold text-[#004d55] tracking-tight">Water is a luxury lifestyle asset.</h2>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/60 flex gap-6 group hover:shadow-md transition duration-300">
+                        <div class="w-12 h-12 bg-[#004d55] text-[#f2ae24] rounded-xl flex items-center justify-center font-bold text-lg shrink-0 group-hover:scale-105 transition-transform">01</div>
+                        <div>
+                            <h4 class="text-lg font-bold text-[#004d55] mb-1">Pristine Source-Traceability</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Originating from high-quality natural reserves renowned for native mineral density balances.</p>
+                        </div>
                     </div>
-                    <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-[#f2ae24] mb-2">The Nakshatra Story</h2>
-                    <h3 class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#004d55] mb-6 leading-tight">Water is not just a necessity—it is an experience.</h3>
-                    <p class="text-slate-700 lg:text-slate-600 leading-relaxed text-base md:text-lg mb-6 font-medium lg:font-normal">
-                        Driven by a deep passion for beverages and an uncompromising commitment to quality. Today, we stand proud as one of the premier, most advanced pure water plants in the entire Godavari districts, redefining premium hydration for our region.
-                    </p>
+
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/60 flex gap-6 group hover:shadow-md transition duration-300">
+                        <div class="w-12 h-12 bg-[#004d55] text-[#f2ae24] rounded-xl flex items-center justify-center font-bold text-lg shrink-0 group-hover:scale-105 transition-transform">02</div>
+                        <div>
+                            <h4 class="text-lg font-bold text-[#004d55] mb-1">Pneumatic Mega Plant</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Operating the premier, high-capacity mega automation pure water ecosystem in the Godavari districts.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/60 flex gap-6 group hover:shadow-md transition duration-300">
+                        <div class="w-12 h-12 bg-[#004d55] text-[#f2ae24] rounded-xl flex items-center justify-center font-bold text-lg shrink-0 group-hover:scale-105 transition-transform">03</div>
+                        <div>
+                            <h4 class="text-lg font-bold text-[#004d55] mb-1">Touchless Purity Execution</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Full technical pneumatic workflows ensuring absolute zero-human interaction from aquifer extraction to seal.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="hidden lg:flex lg:w-1/2 justify-center relative">
-                    <div class="w-full h-[400px] bg-slate-100 rounded-3xl shadow-xl border border-slate-200 overflow-hidden flex items-center justify-center p-8 bg-cover bg-center" style="background-image: linear-gradient(rgba(0,77,85,0.1), rgba(0,77,85,0.2)), url('aboutus.png');">
-                        <div class="text-center text-white drop-shadow-md"></div>
+
+                <div class="lg:col-span-5 relative group">
+                    <div class="absolute -inset-2 bg-gradient-to-tr from-[#004d55] to-[#f2ae24] rounded-[2.5rem] opacity-10 blur-xl group-hover:opacity-20 transition duration-500"></div>
+                    <div class="relative bg-[#004d55] text-white p-10 rounded-[2.5rem] shadow-xl overflow-hidden aspect-[4/5] flex flex-col justify-between">
+                        <div class="absolute inset-0 opacity-10 pointer-events-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                                <line x1="0" y1="20%" x2="100%" y2="80%" stroke="white" stroke-width="2" />
+                                <line x1="0" y1="50%" x2="100%" y2="30%" stroke="white" stroke-width="1" />
+                            </svg>
+                        </div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-[#f2ae24] mb-6"><path d="M12 22a7 7 0 0 0 7-7c0-4.3-7-13-7-13s-7 8.7-7 13a7 7 0 0 0 7 7z"></path></svg>
+                            <h3 class="text-2xl font-bold tracking-tight leading-snug">Redefining modern regional hydration parameters.</h3>
+                        </div>
+                        <div class="border-t border-white/20 pt-6 space-y-4">
+                            <div class="flex items-center gap-3 text-xs uppercase tracking-widest text-slate-300 font-semibold">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-[#f2ae24]"><polyline points="20 6 9 17 4 12"></polyline></svg> Fully BIS Compliant Plant
+                            </div>
+                            <div class="flex items-center gap-3 text-xs uppercase tracking-widest text-slate-300 font-semibold">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-[#f2ae24]"><polyline points="20 6 9 17 4 12"></polyline></svg> In-House Chemical Matrix Monitoring
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="bg-slate-50 rounded-[2.5rem] p-8 md:p-16 mb-24 border border-slate-100">
-                <div class="max-w-3xl mx-auto text-center mb-16">
-                    <h3 class="text-3xl md:text-4xl font-bold text-[#004d55] mb-4">Our Source & Unmatched Purity</h3>
-                    <p class="text-slate-600 text-lg">
-                        Nakshatra Beverages is crafted with exceptional care. We begin with high-quality, pristine sources renowned for their excellent mineral balance. But we don't just stop at great sourcing; we prioritize absolute purity from the source directly to the bottle.
-                    </p>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex items-start gap-5">
-                        <div class="p-4 bg-[#004d55]/5 rounded-xl text-[#004d55] shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="hand-metal"><path d="M18 10V8a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"></path><path d="M14 10V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v4"></path><path d="M10 10V7a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v9"></path><path d="m14 15 3 3V10a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2Z"></path><path d="M6 13V11a2 2 0 0 1 4 0v10H4a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2Z"></path></svg>
-                        </div>
-                        <div>
-                            <h4 class="text-xl font-bold text-[#004d55] mb-2">Untouched by Hand</h4>
-                            <p class="text-slate-500 leading-relaxed text-sm">
-                                Our state-of-the-art production process ensures zero human contact with the water, guaranteeing its completely untouched, natural essence.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex items-start gap-5">
-                        <div class="p-4 bg-[#004d55]/5 rounded-xl text-[#004d55] shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="shield-check"><path d="M20 13c0 5-3.5 7.5-7.66 9.7a1 1 0 0 1-.68 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 .76-.97l8.24-2a1 1 0 0 1 .48 0l8.24 2A1 1 0 0 1 20 6Z"></path><path d="m9 12 2 2 4-4"></path></svg>
-                        </div>
-                        <div>
-                            <h4 class="text-xl font-bold text-[#004d55] mb-2">Rigorous Standards</h4>
-                            <p class="text-slate-500 leading-relaxed text-sm">
-                                As a fully BIS-compliant plant, our facility operates under the watchful eyes of dedicated professionals who continuously monitor quality at every single stage of production.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-          
-
+        </div>
+        <!-- Curve Transition out of Narrative to Contact Form -->
+        <div class="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-[0] translate-y-[1px]">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-[60px] fill-white">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C26.9,4.75,55.05,16.32,83.37,27.57,143.05,51.3,204.09,67.23,321.39,56.44Z"></path>
+            </svg>
         </div>
     </section>
-    <section id="contact" class="py-24 bg-slate-50 px-8">
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-white px-8 relative">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col lg:flex-row items-center gap-20">
-                <div class="lg:w-1/2 relative">
-                    <img src="getintouch.png"
-                        class="rounded-3xl shadow-2xl w-full h-[400px] object-cover" alt="Nakshatra Water">
+                <div class="lg:w-1/2 w-full relative">
+                    <img src="getintouch.png" class="rounded-3xl shadow-2xl w-full h-[400px] object-cover" alt="Nakshatra Water Facility">
                 </div>
-
-                <div class="lg:w-1/2 bg-white p-10 rounded-3xl shadow-sm border border-slate-100 w-full">
-                    <h3 class="text-3xl font-bold text-[#004d55] mb-10">Get In Touch</h3>
+                <div class="lg:w-1/2 bg-slate-50 p-10 rounded-3xl border border-slate-100 w-full">
+                    <h3 class="text-3xl font-bold text-[#004d55] mb-8">Establish Contact</h3>
                     <form id="contactForm" class="space-y-8">
-                        <div class="input-group">
-                            <input type="text" id="name" required
-                                class="peer w-full border-b border-slate-200 py-3 outline-none focus:border-[#004d55] bg-transparent"
-                                placeholder="Name">
-                            <label
-                                class="absolute left-0 top-3 text-slate-400 transition-all pointer-events-none">Name</label>
+                        <div class="relative">
+                            <input type="text" id="name" required class="peer w-full border-b border-slate-200 py-3 outline-none focus:border-[#004d55] bg-transparent" placeholder=" ">
+                            <label class="absolute left-0 top-3 text-slate-400 transition-all pointer-events-none text-sm">Full Name</label>
                         </div>
-                        <div class="input-group">
-                            <input type="number" id="phone" required
-                                class="peer w-full border-b border-slate-200 py-3 outline-none focus:border-[#004d55] bg-transparent"
-                                placeholder="Phone Number ">
-                            <label
-                                class="absolute left-0 top-3 text-slate-400 transition-all pointer-events-none">Email</label>
+                        <div class="relative">
+                            <input type="tel" id="phone" required class="peer w-full border-b border-slate-200 py-3 outline-none focus:border-[#004d55] bg-transparent" placeholder=" ">
+                            <label class="absolute left-0 top-3 text-slate-400 transition-all pointer-events-none text-sm">Phone Number</label>
                         </div>
-
-                        <div class="flex items-center gap-4 p-5 bg-slate-50 rounded-xl border border-slate-100">
-                            <input type="checkbox" id="captcha" class="w-6 h-6 accent-[#004d55] cursor-pointer">
-                            <span class="text-sm font-medium text-slate-600">I'm not a robot</span>
+                        <div class="flex items-center gap-4 p-5 bg-white rounded-xl border border-slate-200/60">
+                            <input type="checkbox" id="captcha" class="w-5 h-5 accent-[#004d55] cursor-pointer">
+                            <span class="text-sm font-medium text-slate-600">Verify: I am human</span>
                         </div>
-
-                        <button type="submit" id="submitBtn"
-                            class="w-full bg-[#004d55] disabled:bg-slate-300 text-white py-5 rounded-xl font-bold uppercase tracking-widest transition-all shadow-lg active:scale-95">
-                            Send Message →
+                        <button type="submit" id="submitBtn" class="w-full bg-[#004d55] disabled:bg-slate-300 text-white py-4 rounded-xl font-bold uppercase tracking-widest transition shadow-lg active:scale-[0.98]">
+                            Dispatch Secure Message →
                         </button>
                     </form>
                 </div>
             </div>
         </div>
+        <!-- Curve Transition out of Contact to Teal Footer -->
+        <div class="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-[0] translate-y-[1px]">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-[60px] fill-[#004d55]">
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86C204.1,67.23,143,51.3,83.37,27.57,55.05,16.32,26.9,4.75,0,0V120H1200V92.83Z"></path>
+            </svg>
+        </div>
     </section>
 
-    <footer class="bg-[#004d55] text-white pt-20 pb-10 px-8">
+    <!-- Footer -->
+    <footer class="bg-[#004d55] text-white pt-16 pb-10 px-8">
         <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
-
-                <div class="lg:col-span-1">
-                    <div class="w-16 h-16 mb-6">
-                        <svg viewBox="0 0 100 100" class="w-full h-full fill-white">
-                            <path d="M0 50 Q 25 35 50 50 T 100 50 V 60 Q 75 75 50 60 T 0 60 Z" />
-                            <path d="M0 30 Q 25 15 50 30 T 100 30 V 40 Q 75 55 50 40 T 0 40 Z" />
-                        </svg>
-                    </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div>
                     <div class="text-2xl font-bold tracking-tighter mb-4">NAKSHATRA.</div>
-                    <p class="text-sm text-slate-300 leading-relaxed">
-                        Nakshatra is more than just water, it's an experience.
-                    </p>
+                    <p class="text-sm text-slate-300 leading-relaxed font-light">Crafting premier modern hydration paradigms through science and touchless automation purity matrix setups.</p>
                 </div>
-
                 <div>
-                    <h4 class="font-bold mb-6 text-lg">Our Premium Water Range</h4>
-                    <ul class="space-y-3 text-sm text-slate-300">
-                        <li><a href="#mineral" class="hover:text-[#f2ae24] transition-colors flex items-center gap-2">■ Mineral Water 750ML</a></li>
-                        <li><a href="#alkaline" class="hover:text-[#f2ae24] transition-colors flex items-center gap-2">■ Alkaline Water 750ML</a></li>
-                        <li><a href="#b12" class="hover:text-[#f2ae24] transition-colors flex items-center gap-2">■ Vitamin B12 Water 750ML</a></li>
-                        <li><a href="#himalayan" class="hover:text-[#f2ae24] transition-colors flex items-center gap-2">■ Himalayan Water 330ML</a></li>
-                        <li><a href="#sparkling" class="hover:text-[#f2ae24] transition-colors flex items-center gap-2">■ Sparkling Water 330ML</a></li>
+                    <h4 class="font-bold mb-4 text-sm uppercase tracking-wider text-orange-300">Quick Portfolio</h4>
+                    <ul class="space-y-2 text-sm text-slate-300 font-light">
+                        <li><a href="#ourproducts" class="hover:text-orange-200">Mineral Variants</a></li>
+                        <li><a href="#ourproducts" class="hover:text-orange-200">Alkaline Selection</a></li>
+                        <li><a href="#ourproducts" class="hover:text-orange-200">Corporate Bulk Packs</a></li>
                     </ul>
                 </div>
-
                 <div>
-                    <h4 class="font-bold mb-6 text-lg">Explore With Us</h4>
-                    <ul class="space-y-3 text-sm text-slate-300">
-                        <li><a href="#" class="hover:text-[#f2ae24] transition-colors flex items-center gap-2">■ Home</a></li>
-                        <li><a href="#about" class="hover:text-[#f2ae24] transition-colors flex items-center gap-2">■ About Us</a></li>
-                        <li><a href="#products" class="hover:text-[#f2ae24] transition-colors flex items-center gap-2">■ Our Products</a></li>
-                        <li><a href="#franchise" class="hover:text-[#f2ae24] transition-colors flex items-center gap-2">■ Franchise</a></li>
-                        <li><a href="#distribution" class="hover:text-[#f2ae24] transition-colors flex items-center gap-2">■ Distribution</a></li>
-                        <li><a href="#contact" class="hover:text-[#f2ae24] transition-colors flex items-center gap-2">■ Contact Us</a></li>
+                    <h4 class="font-bold mb-4 text-sm uppercase tracking-wider text-orange-300">Quick Navigation</h4>
+                    <ul class="space-y-2 text-sm text-slate-300 font-light">
+                        <li><a href="#" class="hover:text-orange-200">Home Base</a></li>
+                        <li><a href="#about" class="hover:text-orange-200">About Narrative</a></li>
+                        <li><a href="#contact" class="hover:text-orange-200">Contact Desk</a></li>
                     </ul>
                 </div>
-
                 <div>
-                    <h4 class="font-bold mb-6 text-lg">Quick Links</h4>
-                    <ul class="space-y-3 text-sm text-slate-300">
-                        <li><a href="#mineral" class="hover:text-[#f2ae24] transition-colors flex items-center gap-2">■ Mineral Water</a></li>
-                        <li><a href="#alkaline" class="hover:text-[#f2ae24] transition-colors flex items-center gap-2">■ Alkaline Water</a></li>
-                        <li><a href="#b12" class="hover:text-[#f2ae24] transition-colors flex items-center gap-2">■ Vitamin B12 Water</a></li>
-                        <li><a href="#glass" class="hover:text-[#f2ae24] transition-colors flex items-center gap-2">■ Glass Water Bottle</a></li>
-                        <li><a href="#brochure" class="hover:text-[#f2ae24] transition-colors flex items-center gap-2 font-bold text-white">■ Download Brochure</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="font-bold mb-6 text-lg">Connect With Us</h4>
-                    <div class="space-y-4 mb-8">
-                        <a href="tel:+918160072337" class="flex items-center gap-3 text-sm hover:text-[#f2ae24] transition">
-                            <i data-lucide="phone" class="w-5 h-5 text-[#f2ae24]"></i> +91 8160072337
-                        </a>
-                        <a href="mailto:sales@nevas.in" class="flex items-center gap-3 text-sm hover:text-[#f2ae24] transition">
-                            <i data-lucide="mail" class="w-5 h-5 text-[#f2ae24]"></i> sales@nevas.in
-                        </a>
-                    </div>
-
-                    <div class="flex gap-3 mb-6">
-                        <a href="#" class="bg-white text-[#004d55] p-2 rounded-full hover:bg-[#f2ae24] hover:text-white transition"><i data-lucide="facebook" class="w-4 h-4"></i></a>
-                        <a href="#" class="bg-white text-[#004d55] p-2 rounded-full hover:bg-[#f2ae24] hover:text-white transition"><i data-lucide="youtube" class="w-4 h-4"></i></a>
-                        <a href="#" class="bg-white text-[#004d55] p-2 rounded-full hover:bg-[#f2ae24] hover:text-white transition"><i data-lucide="instagram" class="w-4 h-4"></i></a>
-                        <a href="#" class="bg-white text-[#004d55] p-2 rounded-full hover:bg-[#f2ae24] hover:text-white transition"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
-                    </div>
-
-                    <div class="rounded-xl overflow-hidden border border-white/10">
-                        <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&q=80&w=400"
-                            alt="Map Location"
-                            class="w-full h-24 object-cover grayscale hover:grayscale-0 transition duration-500">
+                    <h4 class="font-bold mb-4 text-sm uppercase tracking-wider text-orange-300">Secure Channels</h4>
+                    <div class="space-y-2 text-sm text-slate-300 mb-4 font-light">
+                        <a href="tel:+918160072337" class="flex items-center gap-2 hover:text-orange-200"> +91 8160072337</a>
+                        <a href="mailto:sales@nevas.in" class="flex items-center gap-2 hover:text-orange-200"> sales@nevas.in</a>
                     </div>
                 </div>
             </div>
-
-            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-slate-400 uppercase tracking-[0.2em]">
-                <div class="flex gap-6">
-                    <a href="#" class="hover:text-white transition">Privacy Policy</a>
-                    <a href="#" class="hover:text-white transition">Terms & Conditions</a>
-                    <a href="#" class="hover:text-white transition">Legal Disclaimer</a>
-                </div>
+            <div class="border-t border-white/10 pt-8 flex justify-between items-center text-[10px] text-slate-400 uppercase tracking-widest">
+                <span>© 2026 Nakshatra Beverages. All Rights Reserved.</span>
             </div>
         </div>
     </footer>
 
-    <a href="https://wa.me/917829998096" 
-       target="_blank" 
-       rel="noopener noreferrer" 
-       class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-xl hover:bg-[#20b858] transition-all transform hover:scale-110 z-50 flex items-center justify-center group"
-       aria-label="Chat with us on WhatsApp">
-        <svg fill="currentColor" viewBox="0 0 24 24" class="w-7 h-7">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+    <!-- Fixed Floating Action Button (WhatsApp) -->
+    <a href="https://wa.me/917829998096" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-xl hover:bg-[#20b858] transition-all transform hover:scale-110 z-50 flex items-center justify-center" aria-label="WhatsApp Support">
+        <svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
         </svg>
-        <span class="absolute right-16 bg-gray-800 text-white text-sm px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-            Chat with us
-        </span>
     </a>
 
+    <!-- Core Interactive Platform Scripts -->
     <script>
-        // Init Icons
-        lucide.createIcons();
-
-        // MOBILE SIDEBAR SCRIPTS
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const closeSidebarBtn = document.getElementById('closeSidebarBtn');
         const mobileSidebar = document.getElementById('mobileSidebar');
@@ -577,48 +420,35 @@
         function openSidebar() {
             mobileSidebar.classList.remove('invisible');
             setTimeout(() => {
-                sidebarOverlay.classList.remove('opacity-0');
-                sidebarOverlay.classList.add('opacity-100');
-                sidebarPanel.classList.remove('translate-x-full');
-                sidebarPanel.classList.add('translate-x-0');
+                sidebarOverlay.classList.replace('opacity-0', 'opacity-100');
+                sidebarPanel.classList.replace('translate-x-full', 'translate-x-0');
             }, 10);
         }
 
         function closeSidebar() {
-            sidebarOverlay.classList.remove('opacity-100');
-            sidebarOverlay.classList.add('opacity-0');
-            sidebarPanel.classList.remove('translate-x-0');
-            sidebarPanel.classList.add('translate-x-full');
-            
-            setTimeout(() => {
-                mobileSidebar.classList.add('invisible');
-            }, 300); // matches the tailwind transition duration-300
+            sidebarOverlay.classList.replace('opacity-100', 'opacity-0');
+            sidebarPanel.classList.replace('translate-x-0', 'translate-x-full');
+            setTimeout(() => mobileSidebar.classList.add('invisible'), 300);
         }
 
-        // Event Listeners
         mobileMenuBtn.addEventListener('click', openSidebar);
         closeSidebarBtn.addEventListener('click', closeSidebar);
         sidebarOverlay.addEventListener('click', closeSidebar);
-        
-        // Close sidebar if any navigation link is clicked
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', closeSidebar);
-        });
+        mobileNavLinks.forEach(link => link.addEventListener('click', closeSidebar));
 
-
-        // Counter Logic
+        // Animated Numerical Increments
         const counters = document.querySelectorAll('.counter');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const target = +entry.target.getAttribute('data-target');
                     let count = 0;
-                    const inc = target / 50;
+                    const inc = target / 40;
                     const update = () => {
                         if (count < target) {
                             count += inc;
                             entry.target.innerText = Math.ceil(count);
-                            setTimeout(update, 30);
+                            setTimeout(update, 20);
                         } else {
                             entry.target.innerText = target;
                         }
@@ -627,18 +457,44 @@
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.5 });
+        }, { threshold: 0.4 });
         counters.forEach(c => observer.observe(c));
 
-        // Form Submission
+        // High Performance Infinite Auto Scroll System
+        const carousel = document.getElementById('productCarousel');
+        let scrollSpeed = 1; 
+        let scrollInterval;
+
+        const originalContent = carousel.innerHTML;
+        carousel.innerHTML += originalContent; 
+
+        function startAutoScroll() {
+            scrollInterval = setInterval(() => {
+                carousel.scrollLeft += scrollSpeed;
+                if (carousel.scrollLeft >= carousel.scrollWidth / 2) {
+                    carousel.scrollLeft = 0;
+                }
+            }, 20);
+        }
+
+        function stopAutoScroll() {
+            clearInterval(scrollInterval);
+        }
+
+        startAutoScroll();
+        carousel.addEventListener('mouseenter', stopAutoScroll);
+        carousel.addEventListener('mouseleave', startAutoScroll);
+        carousel.addEventListener('touchstart', stopAutoScroll);
+        carousel.addEventListener('touchend', startAutoScroll);
+
+        // Form Submission Interceptor
         document.getElementById('contactForm').onsubmit = (e) => {
             e.preventDefault();
-            alert("Success! Your message has been sent to the Nakshatra team.");
+            alert("Submission Received! The Nakshatra corporate desk will follow up shortly.");
             e.target.reset();
             document.getElementById('submitBtn').disabled = true;
             document.getElementById('captcha').checked = false;
         };
     </script>
 </body>
-
 </html>
