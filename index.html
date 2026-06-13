@@ -33,20 +33,81 @@
             background-color: var(--nevas-teal);
         }
 
-        /* Hide Scrollbar for clean auto-scrolling execution */
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-
         .peer:focus~label,
         .peer:not(:placeholder-shown)~label {
             transform: translateY(-1.5rem) scale(0.75);
             color: var(--nevas-teal);
         }
+
+        /* Visionary Cinematic Bottle Drop Animations */
+        @keyframes bottleFloatAndDrop {
+            0% {
+                transform: translateY(-25px) rotate(-3deg);
+                opacity: 0.7;
+            }
+            45% {
+                transform: translateY(110px) rotate(0deg);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(100px) scaleY(0.95);
+            }
+            60% {
+                transform: translateY(95px) rotate(2deg);
+            }
+            100% {
+                transform: translateY(-25px) rotate(-3deg);
+                opacity: 0.7;
+            }
+        }
+
+        @keyframes dynamicRipple {
+            0% {
+                transform: scale(0.3);
+                opacity: 0;
+            }
+            44% {
+                transform: scale(0.3);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(0.5);
+                opacity: 0.8;
+                border-color: #f2ae24;
+            }
+            75% {
+                transform: scale(1.4);
+                opacity: 0;
+                border-color: #38bdf8;
+            }
+            100% {
+                transform: scale(1.4);
+                opacity: 0;
+            }
+        }
+
+        /* Luxury Product Floating Sequence Keyframes */
+        @keyframes subtleProductFloat {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(1deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        .animate-bottle-drop {
+            animation: bottleFloatAndDrop 7s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+        }
+
+        .animate-water-ripple {
+            animation: dynamicRipple 7s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+        }
+
+        .animate-product-float-1 { animation: subtleProductFloat 6s ease-in-out infinite; }
+        .animate-product-float-2 { animation: subtleProductFloat 6.8s ease-in-out infinite; animation-delay: 0.5s; }
+        .animate-product-float-3 { animation: subtleProductFloat 7.4s ease-in-out infinite; animation-delay: 1s; }
+        .animate-product-float-4 { animation: subtleProductFloat 8s ease-in-out infinite; animation-delay: 1.5s; }
+        .animate-product-float-5 { animation: subtleProductFloat 6.5s ease-in-out infinite; animation-delay: 0.8s; }
+        .animate-product-float-6 { animation: subtleProductFloat 7.1s ease-in-out infinite; animation-delay: 1.2s; }
+        .animate-product-float-7 { animation: subtleProductFloat 7.8s ease-in-out infinite; animation-delay: 1.7s; }
 
         @media (max-width: 1023px) {
             .mobile-bg-about {
@@ -143,7 +204,7 @@
                 </div>
                 <div class="flex flex-col items-center">
                     <div class="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center mb-4 text-orange-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="15" x2="23" y2="15"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="15" x2="4" y2="15"></line></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="15" x2="23" y2="15"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="15" x2="4" y2="15"></line></style>
                     </div>
                     <div class="text-3xl font-bold"><span class="counter" data-target="100">0</span>%</div>
                     <p class="text-[10px] uppercase tracking-widest text-slate-300 mt-2">Touchless Automation</p>
@@ -172,76 +233,99 @@
         </div>
     </section>
 
-    <!-- Product Portfolio (Automated Infinite Loop Carousel) -->
+    <!-- Product Portfolio (Visionary Animated Floating Grid) -->
     <section id="ourproducts" class="py-16 bg-slate-50 overflow-hidden relative">
         <div class="max-w-7xl mx-auto px-6 md:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
-                <div>
-                    <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#f2ae24] block mb-2">Curated Hydration</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-[#004d55] uppercase tracking-wider">The Product Portfolio</h2>
-                </div>
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#f2ae24] block mb-2">Curated Hydration</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-[#004d55] uppercase tracking-wider">The Complete Portfolio</h2>
+                <p class="text-slate-500 text-sm mt-2">Hover over variants to pause weightless buoyancy kinematics.</p>
             </div>
 
-            <!-- Auto Scrolling Container -->
-            <div id="productCarousel" class="flex overflow-x-auto gap-6 pb-4 no-scrollbar whitespace-nowrap">
+            <!-- Staggered Floating Grid Containing All 7 Products -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                 
-                <!-- Card 1 -->
-                <div class="w-[280px] md:w-[320px] shrink-0 bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200/60 transition-all duration-300 hover:shadow-xl flex flex-col justify-between group">
+                <!-- Product 1: Iceburg Pure -->
+                <div class="animate-product-float-1 bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl border border-slate-200/60 transition-all duration-500 hover:-translate-y-3 flex flex-col justify-between group">
                     <div class="aspect-[3/4] w-full overflow-hidden bg-slate-100 relative">
-                        <img src="iceburg_green.webp" loading="lazy" alt="Iceburg Pure" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <span class="absolute top-4 left-4 bg-emerald-600 text-white font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full">Purity Choice</span>
+                        <img src="iceburg_green.webp" loading="lazy" alt="Iceburg Pure" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <span class="absolute top-4 left-4 bg-emerald-600 text-white font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full shadow-sm">Purity Choice</span>
                     </div>
-                    <div class="p-5 border-t border-slate-50 bg-white">
+                    <div class="p-5 border-t border-slate-100 bg-white">
                         <h3 class="text-lg font-bold text-[#004d55] mb-1">Iceburg Pure</h3>
                         <p class="text-xs text-slate-400 font-medium">Natural Spring Refreshment</p>
                     </div>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="w-[280px] md:w-[320px] shrink-0 bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200/60 transition-all duration-300 hover:shadow-xl flex flex-col justify-between group">
+                <!-- Product 2: Natural Smart -->
+                <div class="animate-product-float-2 bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl border border-slate-200/60 transition-all duration-500 hover:-translate-y-3 flex flex-col justify-between group">
                     <div class="aspect-[3/4] w-full overflow-hidden bg-slate-100 relative">
-                        <img src="natural.webp" loading="lazy" alt="Natural Smart" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <span class="absolute top-4 left-4 bg-pink-600 text-white font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full">Healthy Living</span>
+                        <img src="natural.webp" loading="lazy" alt="Natural Smart" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <span class="absolute top-4 left-4 bg-pink-600 text-white font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full shadow-sm">Healthy Living</span>
                     </div>
-                    <div class="p-5 border-t border-slate-50 bg-white">
+                    <div class="p-5 border-t border-slate-100 bg-white">
                         <h3 class="text-lg font-bold text-[#004d55] mb-1">Natural Smart</h3>
                         <p class="text-xs text-slate-400 font-medium">Smart Hydration Lifestyle</p>
                     </div>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="w-[280px] md:w-[320px] shrink-0 bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200/60 transition-all duration-300 hover:shadow-xl flex flex-col justify-between group">
+                <!-- Product 3: Lavin Packaged Water -->
+                <div class="animate-product-float-3 bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl border border-slate-200/60 transition-all duration-500 hover:-translate-y-3 flex flex-col justify-between group">
                     <div class="aspect-[3/4] w-full overflow-hidden bg-slate-100 relative">
-                        <img src="lavin2.webp" loading="lazy" alt="Lavin Water" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <span class="absolute top-4 left-4 bg-amber-500 text-white font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full">Multi-Pack</span>
+                        <img src="lavin2.webp" loading="lazy" alt="Lavin Water" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <span class="absolute top-4 left-4 bg-amber-500 text-white font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full shadow-sm">Multi-Pack</span>
                     </div>
-                    <div class="p-5 border-t border-slate-50 bg-white">
-                        <h3 class="text-lg font-bold text-[#004d55] mb-1">Lavin Packaged Water</h3>
+                    <div class="p-5 border-t border-slate-100 bg-white">
+                        <h3 class="text-lg font-bold text-[#004d55] mb-1">Lavin Packaged</h3>
                         <p class="text-xs text-slate-400 font-medium">Purified Mineral Support</p>
                     </div>
                 </div>
 
-                <!-- Card 4 -->
-                <div class="w-[280px] md:w-[320px] shrink-0 bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200/60 transition-all duration-300 hover:shadow-xl flex flex-col justify-between group">
+                <!-- Product 4: Iceberg Premium -->
+                <div class="animate-product-float-4 bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl border border-slate-200/60 transition-all duration-500 hover:-translate-y-3 flex flex-col justify-between group">
                     <div class="aspect-[3/4] w-full overflow-hidden bg-slate-100 relative">
-                        <img src="iceburg_black.webp" loading="lazy" alt="Iceburg Premium" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <span class="absolute top-4 left-4 bg-slate-900 text-amber-400 font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full border border-amber-500/30">Luxury Edition</span>
+                        <img src="iceburg_black.webp" loading="lazy" alt="Iceburg Premium" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <span class="absolute top-4 left-4 bg-slate-900 text-amber-400 font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full border border-amber-500/30 shadow-sm">Luxury Edition</span>
                     </div>
-                    <div class="p-5 border-t border-slate-50 bg-white">
+                    <div class="p-5 border-t border-slate-100 bg-white">
                         <h3 class="text-lg font-bold text-[#004d55] mb-1">Iceberg Premium</h3>
                         <p class="text-xs text-slate-400 font-medium">Enriched Essential Minerals</p>
                     </div>
                 </div>
 
-                <!-- Card 5 -->
-                <div class="w-[280px] md:w-[320px] shrink-0 bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200/60 transition-all duration-300 hover:shadow-xl flex flex-col justify-between group">
+                <!-- Product 5: B2 Packaged Water -->
+                <div class="animate-product-float-5 bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl border border-slate-200/60 transition-all duration-500 hover:-translate-y-3 flex flex-col justify-between group">
                     <div class="aspect-[3/4] w-full overflow-hidden bg-slate-100 relative">
-                        <img src="b2.webp" loading="lazy" alt="B2 Water" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <span class="absolute top-4 left-4 bg-blue-600 text-white font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full">Deep Hydro</span>
+                        <img src="b2.webp" loading="lazy" alt="B2 Water" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <span class="absolute top-4 left-4 bg-blue-600 text-white font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full shadow-sm">Deep Hydration</span>
                     </div>
-                    <div class="p-5 border-t border-slate-50 bg-white">
+                    <div class="p-5 border-t border-slate-100 bg-white">
                         <h3 class="text-lg font-bold text-[#004d55] mb-1">B2 Packaged Water</h3>
-                        <p class="text-xs text-slate-400 font-medium">Crystal Clear Formulation</p>
+                        <p class="text-xs text-slate-400 font-medium">Crystal Clear Deep Hydro</p>
+                    </div>
+                </div>
+
+                <!-- Product 6: Natural Reserve -->
+                <div class="animate-product-float-6 bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl border border-slate-200/60 transition-all duration-500 hover:-translate-y-3 flex flex-col justify-between group">
+                    <div class="aspect-[3/4] w-full overflow-hidden bg-slate-100 relative">
+                        <img src="natural_smart.webp" loading="lazy" alt="Natural Reserve" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <span class="absolute top-4 left-4 bg-teal-700 text-white font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full shadow-sm">Eco Source</span>
+                    </div>
+                    <div class="p-5 border-t border-slate-100 bg-white">
+                        <h3 class="text-lg font-bold text-[#004d55] mb-1">Natural Reserve</h3>
+                        <p class="text-xs text-slate-400 font-medium">Pristine Waterfall Eco Edition</p>
+                    </div>
+                </div>
+
+                <!-- Product 7: Lavin Pure -->
+                <div class="animate-product-float-7 bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl border border-slate-200/60 transition-all duration-500 hover:-translate-y-3 flex flex-col justify-between group">
+                    <div class="aspect-[3/4] w-full overflow-hidden bg-slate-100 relative">
+                        <img src="lavin_pure.webp" loading="lazy" alt="Lavin Pure" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <span class="absolute top-4 left-4 bg-orange-600 text-white font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full shadow-sm">Daily Hydration</span>
+                    </div>
+                    <div class="p-5 border-t border-slate-100 bg-white">
+                        <h3 class="text-lg font-bold text-[#004d55] mb-1">Lavin Pure</h3>
+                        <p class="text-xs text-slate-400 font-medium">Safe & Pure Everyday Choice</p>
                     </div>
                 </div>
 
@@ -255,7 +339,40 @@
         </div>
     </section>
 
-   
+    <!-- Visionary Core Value Section -->
+    <section class="py-24 px-8 bg-white relative">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+            <div class="lg:w-1/2">
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#f2ae24] block mb-2">Purity Engineered</span>
+                <h3 class="text-4xl md:text-5xl font-bold text-[#004d55] mb-6 leading-tight">The Purest Mineral Balance Your Body Craves.</h3>
+                <p class="text-slate-600 leading-relaxed mb-8 text-lg">
+                    We don’t just pack water—we perfect it. Every bottle delivers calibrated trace minerals like calcium, magnesium, and potassium vital for cellular revitalization.
+                </p>
+                <div class="grid grid-cols-2 gap-4 mb-8">
+                    <div class="flex items-center gap-2 text-slate-700 font-semibold text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-[#004d55]"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Light Alkaline Balance
+                    </div>
+                    <div class="flex items-center gap-2 text-slate-700 font-semibold text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-[#004d55]"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Absolute Pathogen Free
+                    </div>
+                </div>
+                <a href="#contact" class="inline-block bg-[#004d55] text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:bg-slate-800 transition">Get Distribution Details</a>
+            </div>
+            <div class="lg:w-1/2 flex justify-center">
+                <div class="w-full max-w-md aspect-[4/5] bg-gradient-to-br from-slate-50 to-slate-100 rounded-[2.5rem] shadow-2xl border border-slate-200/50 flex flex-col items-center justify-center p-12 text-center group relative overflow-hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-[#004d55] mb-4 animate-bounce"><path d="M12 22a7 7 0 0 0 7-7c0-4.3-7-13-7-13s-7 8.7-7 13a7 7 0 0 0 7 7z"></path></svg>
+                    <p class="text-sm font-bold text-[#004d55] uppercase tracking-widest">Premium Flask Showcase</p>
+                    <p class="text-xs text-slate-400 mt-2">Refreshing Imagery Coming Soon</p>
+                </div>
+            </div>
+        </div>
+        <!-- Curve Transition out of Values to Narrative Story -->
+        <div class="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-[0] translate-y-[1px]">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-[60px] fill-slate-50">
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86C204.1,67.23,143,51.3,83.37,27.57,55.05,16.32,26.9,4.75,0,0V120H1200V92.83Z"></path>
+            </svg>
+        </div>
+    </section>
 
     <!-- Visionary Interactive Narrative Section -->
     <section id="about" class="py-20 px-8 bg-slate-50 overflow-hidden relative">
@@ -293,26 +410,40 @@
                     </div>
                 </div>
 
+                <!-- Animated Interactive Block: Bottle Dropping Into Fluid Ripple -->
                 <div class="lg:col-span-5 relative group">
                     <div class="absolute -inset-2 bg-gradient-to-tr from-[#004d55] to-[#f2ae24] rounded-[2.5rem] opacity-10 blur-xl group-hover:opacity-20 transition duration-500"></div>
-                    <div class="relative bg-[#004d55] text-white p-10 rounded-[2.5rem] shadow-xl overflow-hidden aspect-[4/5] flex flex-col justify-between">
-                        <div class="absolute inset-0 opacity-10 pointer-events-none">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-                                <line x1="0" y1="20%" x2="100%" y2="80%" stroke="white" stroke-width="2" />
-                                <line x1="0" y1="50%" x2="100%" y2="30%" stroke="white" stroke-width="1" />
-                            </svg>
+                    <div class="relative bg-[#004d55] text-white p-10 rounded-[2.5rem] shadow-xl overflow-hidden aspect-[4/5] flex flex-col justify-between items-center bg-gradient-to-b from-[#004d55] to-[#003339]">
+                        
+                        <div class="text-center w-full z-10">
+                            <h3 class="text-xl font-bold tracking-tight text-slate-100">Redefining Regional Hydration</h3>
                         </div>
-                        <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-[#f2ae24] mb-6"><path d="M12 22a7 7 0 0 0 7-7c0-4.3-7-13-7-13s-7 8.7-7 13a7 7 0 0 0 7 7z"></path></svg>
-                            <h3 class="text-2xl font-bold tracking-tight leading-snug">Redefining modern regional hydration parameters.</h3>
+
+                        <!-- Drop Animation Container Area -->
+                        <div class="relative w-full flex-1 flex items-center justify-center">
+                            
+                            <div class="absolute bottom-6 w-32 h-1 bg-sky-400/20 blur-sm rounded-full"></div>
+                            
+                            <!-- Fluid Ripple Effects -->
+                            <div class="absolute bottom-5 w-24 h-12 rounded-full border-2 border-transparent animate-water-ripple"></div>
+                            <div class="absolute bottom-5 w-24 h-12 rounded-full border-2 border-transparent animate-water-ripple" style="animation-delay: 3.5s;"></div>
+
+                            <!-- Animated Glass Silhouette Dropping -->
+                            <div class="absolute top-0 w-16 h-44 border-2 border-white/30 rounded-t-full rounded-b-xl bg-gradient-to-b from-white/10 to-sky-400/20 shadow-lg p-2 flex flex-col justify-between items-center animate-bottle-drop">
+                                <div class="w-6 h-4 border border-white/40 rounded-t-sm bg-white/20"></div>
+                                <div class="flex-1 flex items-center justify-center">
+                                    <svg class="w-10 h-16 fill-sky-400/40 text-transparent" viewBox="0 0 24 24">
+                                        <path d="M12,20C15.87,20 19,16.87 19,13C19,9.13 12,2 12,2C12,2 5,9.13 5,13C5,16.87 8.13,20 12,20Z"/>
+                                    </svg>
+                                </div>
+                                <div class="text-[8px] font-bold text-orange-300 uppercase tracking-widest select-none">PURE</div>
+                            </div>
                         </div>
-                        <div class="border-t border-white/20 pt-6 space-y-4">
-                            <div class="flex items-center gap-3 text-xs uppercase tracking-widest text-slate-300 font-semibold">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-[#f2ae24]"><polyline points="20 6 9 17 4 12"></polyline></svg> Fully BIS Compliant Plant
-                            </div>
-                            <div class="flex items-center gap-3 text-xs uppercase tracking-widest text-slate-300 font-semibold">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-[#f2ae24]"><polyline points="20 6 9 17 4 12"></polyline></svg> In-House Chemical Matrix Monitoring
-                            </div>
+
+                        <!-- Lower Certificate Metadata Row -->
+                        <div class="w-full border-t border-white/10 pt-4 flex justify-around text-[10px] uppercase tracking-widest text-slate-300 font-semibold z-10">
+                            <span class="flex items-center gap-1"><span class="w-1.5 h-1.5 bg-[#f2ae24] rounded-full"></span> BIS Safe</span>
+                            <span class="flex items-center gap-1"><span class="w-1.5 h-1.5 bg-sky-400 rounded-full"></span> Touchless</span>
                         </div>
                     </div>
                 </div>
@@ -459,33 +590,6 @@
             });
         }, { threshold: 0.4 });
         counters.forEach(c => observer.observe(c));
-
-        // High Performance Infinite Auto Scroll System
-        const carousel = document.getElementById('productCarousel');
-        let scrollSpeed = 1; 
-        let scrollInterval;
-
-        const originalContent = carousel.innerHTML;
-        carousel.innerHTML += originalContent; 
-
-        function startAutoScroll() {
-            scrollInterval = setInterval(() => {
-                carousel.scrollLeft += scrollSpeed;
-                if (carousel.scrollLeft >= carousel.scrollWidth / 2) {
-                    carousel.scrollLeft = 0;
-                }
-            }, 20);
-        }
-
-        function stopAutoScroll() {
-            clearInterval(scrollInterval);
-        }
-
-        startAutoScroll();
-        carousel.addEventListener('mouseenter', stopAutoScroll);
-        carousel.addEventListener('mouseleave', startAutoScroll);
-        carousel.addEventListener('touchstart', stopAutoScroll);
-        carousel.addEventListener('touchend', startAutoScroll);
 
         // Form Submission Interceptor
         document.getElementById('contactForm').onsubmit = (e) => {
